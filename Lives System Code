@@ -1,0 +1,43 @@
+I have created a C# script that gives the player 3 lives when the game starts. 
+If the enemies get too close to the player the player loses a life.
+If the player loses all of the 3 lives, it's a game over. 
+
+using UnityEngine;
+using UnityEngine.SceneManagement; // To restart the game or load a game-over scene
+
+public class PlayerLives : MonoBehaviour
+{
+    public int lives = 3; // Starting number of lives
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if the player collides with an enemy
+        if (collision.gameObject.tag == "Enemy")
+        {
+            // Reduce player's lives
+            lives--;
+
+            Debug.Log("Player hit! Lives remaining: " + lives);
+
+            // Check if player is out of lives
+            if (lives <= 0)
+            {
+                Debug.Log("Game Over!");
+                GameOver();
+            }
+        }
+    }
+
+    void GameOver()
+    {
+        // Restart the current scene (you can replace this with your own game-over logic)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}
+
+Explanation of the code:
+It creates a variable called "Lives" ands it sets it to 3.
+It then creates a class with with 2 objects.
+Now it checks whether the player collides with sprites that have "Enemy" has tag.
+If this condition is met, it reduces the variable Lives by -1. 
+If the player has 0 lives remaining, they loses and the game resets. 
