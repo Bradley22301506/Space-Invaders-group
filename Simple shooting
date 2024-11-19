@@ -1,0 +1,66 @@
+I have created a simple code that allows the player to shoot a prefabbed bullet from a shooting position into the air, these two codes handle shooting and collision.
+
+using UnityEngine;
+
+public class projectileShoot : MonoBehaviour
+{
+    public GameObject projectilePrefab;
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
+        }
+
+    }
+}
+
+
+this first one is very simple it just checks if the player has pressed the mouse and if that is the case, it will creat a bullet.
+
+using UnityEngine;
+
+public class Projectile : MonoBehaviour
+{
+
+    public float moveSpeed;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+    }
+
+      private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+        if(collision.gameObject.tag == "Boundary")
+        {
+            Destroy(gameObject);
+        }
+    }
+}
+
+This code is also simple but effective as it essentially uses a "Movespeed" variable, to calculate the speed in which the projectile travels, we used the "Time.deltatime"
+method as it is the best way to calculate the movement since the last frame from what we researched at least; the last part of the code just handles the "collision" checking to see if the projectile hits either
+the "Enemy" or the "boundary" for the enemy we just made the projectile destroy both the enemy and itself, for the boundary the projectile is the only thing that gets destroyed.
