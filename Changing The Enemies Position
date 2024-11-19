@@ -1,0 +1,11 @@
+I have created a spawn point for the enemies. 
+So everytime the player collides with the enemies, the enemies will get teleported back to their oringinal spawn location. 
+
+if (collision.gameObject.tag =="Player")
+         {
+            transform.position = new Vector2(0.15f, 3.31f);
+            
+        }
+
+The code checks whether the player collides with the enemy.
+If this condition is met, the enemies will change position. 
