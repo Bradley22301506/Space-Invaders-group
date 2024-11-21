@@ -1,0 +1,59 @@
+I have added a score system for our game by creating a variable score that displays as an int. It will then display this as a text refered as "ScoreText". 
+
+using UnityEngine;
+using TMPro;
+public class PointManager : MonoBehaviour
+{
+    public int score;
+    public TMP_Text scoreText;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+public void UpdateScore(int points)
+{
+    score += points;
+    scoreText.text = "Score: " + score;
+
+}
+
+}
+
+I have then adding a few more codes to displaying and updating the score where an ememy collides with bullets. The score goes up by 10.
+using UnityEngine;
+
+public class Projectile : MonoBehaviour
+{
+
+    public float moveSpeed;
+    private PointManager pointManager;
+  
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+    }
+
+      private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+            pointManager.UpdateScore(10);
+            Destroy(gameObject);
+        }
+    
+        if(collision.gameObject.tag == "Boundary")
+        {
+            Destroy(gameObject);
+        }
+    }
+}
