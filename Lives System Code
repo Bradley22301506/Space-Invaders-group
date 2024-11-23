@@ -41,3 +41,4 @@ It creates a variable called "Lives" ands it sets it to 3 at the start of the ga
 Now it checks whether the player collides with sprites that have "Enemy" has tag.
 If this condition is met, it reduces the variable Lives by -1. 
 If the player has 0 lives remaining, it sends me a print function to display that is game over.
+The game then resets.
