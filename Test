@@ -1,1 +1,8 @@
-test
+Title of the game = Cosmic Defenders 2D
+
+Requirements for creating this game
+1) For this game, we first going to need a player that controls a spaceship. 
+2) The player should be able to shoot laser at the enemies to eliminate them. 
+3) For each enemy that the player eliminates, a score should be displayed on the screen increasing, so that the player can keep track of their progress. 
+4) We need to make a lives system for the player. This is for creating a way for the player to loose. If the enemies are attacking the player and the player gets hit 3 times, it is a game over. The player can also loose lives if they are too close from the enemies.
+5) To win the player must defeat all enemies.
