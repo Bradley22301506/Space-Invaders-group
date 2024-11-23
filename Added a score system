@@ -1,4 +1,6 @@
-I have added a score system for our game by creating a variable score that displays as an int. It will then display this as a text refered as "ScoreText". 
+I have added a score system in one of our previous code. It creates a variable that displays as an integer.
+This text is a part that I named as "ScoreText". 
+If the laser collides with sprites tagged as "Enemy", they laser will send a signal to update the score by 10.
 
 using UnityEngine;
 using TMPro;
