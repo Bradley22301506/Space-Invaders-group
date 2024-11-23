@@ -36,8 +36,8 @@ public class PlayerLives : MonoBehaviour
 }
 
 Explanation of the code:
-It creates a variable called "Lives" ands it sets it to 3.
-It then creates a class with with 2 objects.
+I created a class for the player's lives. 
+It creates a variable called "Lives" ands it sets it to 3 at the start of the game.
 Now it checks whether the player collides with sprites that have "Enemy" has tag.
 If this condition is met, it reduces the variable Lives by -1. 
-If the player has 0 lives remaining, they loses and the game resets. 
+If the player has 0 lives remaining, it sends me a print function to display that is game over.
