@@ -9,7 +9,5 @@ Requirements for creating this game
 
 4) We need to make a lives system for the player. 
 This is for creating a way for the player to loose. 
-If the player gets hit 3 times, it is a game over. 
-The player can also loose lives if they are too close from the enemies.
-
+The player can loose lives if the enemies get too close 3 times.
 5) To win the player must defeat all enemies.
