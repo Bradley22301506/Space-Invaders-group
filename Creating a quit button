@@ -1,0 +1,19 @@
+For the quit button, I will reuse the same script that I have used for the play button.
+Inside the class of Menu, I will create a function called QuitGame, that will close the program. 
+
+using UnityEngine;
+using UnityEngine.SceneManagement; 
+
+public class Menu : MonoBehaviour
+{
+   public void PlayGame()
+   {
+    SceneManager.LoadSceneAsync("SampleScene");
+   }
+
+   public void QuitGame()
+{
+   Application.Quit();
+}
+
+}
