@@ -1,0 +1,17 @@
+This is the code for the play button. 
+
+using UnityEngine;
+using UnityEngine.SceneManagement; 
+
+public class Menu : MonoBehaviour
+{
+   public void PlayGame()
+   {
+    SceneManager.LoadSceneAsync("SampleScene");
+   }
+}
+
+It creates a class called Menu. 
+Inside that class there is a function called PlayGame.
+Using Scenemanager to switch Scenes in the project. (Menu scene, Game scene)
+When the play button is clicked, the function is called. 
